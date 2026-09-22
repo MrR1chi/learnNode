@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "bulma": "^1.0.4",
     "sass-embedded": "^1.104.1",
     "vite": "^8.3.0"
   },
