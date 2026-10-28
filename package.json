@@ -10,13 +10,13 @@
   "devDependencies": {
     "@types/bun": "latest",
     "bulma": "^1.0.4",
-    "sass-embedded": "^1.104.1",
-    "vite": "^8.3.0"
+    "sass-embedded": "^1.93.3",
+    "vite": "^7.2.4"
   },
   "peerDependencies": {
-    "typescript": "^7"
+    "typescript": "^5"
   },
   "dependencies": {
-    "boxen": "^9.0.0"
+    "boxen": "^8.0.1"
   }
 }
