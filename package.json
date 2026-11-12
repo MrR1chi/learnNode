@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-vue": "^6.0.3",
+    "axios": "^1.13.6",
     "boxen": "^8.0.1",
     "vue": "^3.5.26",
     "vue-router": "4"
