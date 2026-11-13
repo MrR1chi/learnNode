@@ -7,6 +7,8 @@ import Messages from './pages/Messages.vue';
 import ChuckNorris from './pages/ChuckNorris.vue';
 import RickAndMorty from './pages/RickAndMorty.vue';
 import CanvasExample from './pages/CanvasExample.vue';
+import WebApis from './pages/WebApis.vue';
+
 const routes = [
   { path: '/', component: ToDo, name: 'ToDo' },
   { path: '/modals', component: Modals, name: 'Modals' },
@@ -14,6 +16,7 @@ const routes = [
   { path: '/chuck', component: ChuckNorris, name: 'Chuck Norris' },
   { path: '/rickandmorty', component: RickAndMorty, name: 'Rick And Morty' },
   { path: '/canvas', component: CanvasExample, name: 'Canvas' },
+  { path: '/webapis', component: WebApis, name: 'WebApis' },
 ];
 
 export const router = createRouter({
