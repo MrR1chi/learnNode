@@ -11,16 +11,15 @@ function search() {
 </script>
 
 <template>
-    <form @submit.prevent="search">
-        <input
-            v-model="query"
-            type="text"
-            placeholder="Search characters..."
-            class="input"
-        />
-
-        <button type="submit" class="button is-primary">
-            Search
-        </button>
-    </form>
+    <div class="field mb-4">
+        <div class="control">
+            <input
+                v-model="query"
+                @input="search"
+                class="input"
+                type="text"
+                placeholder="Search characters..."
+            />
+        </div>
+    </div>
 </template>
