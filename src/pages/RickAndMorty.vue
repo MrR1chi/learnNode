@@ -46,7 +46,50 @@ async function searchCharacters(query) {
         ? `https://rickandmortyapi.com/api/character?name=${encodeURIComponent(query)}&page=1`
         : 'https://rickandmortyapi.com/api/character?page=1';
 
-    await getCharacters(url);
+    let controller = null;
+    
+async function getCharacters(url) {
+    if (controller) {
+        controller.abort();
+    }
+
+    const currentController = new AbortController();
+    controller = currentController;
+
+    try {
+        const res = await axios.get(url, {
+            signal: currentController.signal
+        });
+
+        if (currentController.signal.aborted) return;
+
+        characters.value = res.data.results;
+        info.value = res.data.info;
+
+    } catch (error) {
+        if (currentController.signal.aborted ||
+            error.code === 'ERR_CANCELED') {
+            return;
+        }
+
+        if (error.response?.status === 404) {
+            characters.value = [];
+            info.value = {
+                count: 0,
+                pages: 0,
+                next: null,
+                prev: null
+            };
+        } else {
+            console.error(error);
+        }
+    } finally {
+        if (controller === currentController) {
+            controller = null;
+        }
+    }
+}
+
 }
 
 </script>
